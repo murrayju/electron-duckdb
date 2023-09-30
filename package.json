@@ -1,0 +1,19 @@
+{
+  "name": "electron-duckdb",
+  "version": "1.0.0",
+  "description": "test duckdb in electron",
+  "main": "main.js",
+  "scripts": {
+    "test-electron": "electron .",
+    "test-node": "node node.js"
+  },
+  "author": "Justin Murray<justin@murr.me>",
+  "license": "ISC",
+  "dependencies": {
+    "apache-arrow": "^13.0.0",
+    "duckdb": "0.9.1-dev43.0"
+  },
+  "devDependencies": {
+    "electron": "^26.2.4"
+  }
+}
