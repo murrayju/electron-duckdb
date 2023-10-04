@@ -2,7 +2,8 @@
   "name": "electron-duckdb",
   "version": "1.0.0",
   "description": "test duckdb in electron",
-  "main": "main.js",
+  "main": "main.cjs",
+  "type": "module",
   "scripts": {
     "test-electron": "electron .",
     "test-node": "node node.js"
