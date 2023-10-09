@@ -3,7 +3,7 @@ const { RecordBatchReader } = require("apache-arrow");
 
 module.exports = {
   test: async () => {
-    const sql = "select generate_series(5) as foo, generate_series(5) as bar";
+    const sql = "select * from generate_series(5) as v(foo)";
     const db = new duckdb.Database(":memory:");
     const con = db.connect();
 
@@ -57,10 +57,11 @@ module.exports = {
     // on node, this executes without error
     const reader = await RecordBatchReader.from(stream);
     for await (const batch of reader) {
-      console.log(batch.schema.fields, batch.numRows, batch.numCols);
+      console.log(
+        `${batch.schema.fields.length} fields, ${batch.numRows} rows, ${batch.numCols} cols`
+      );
       // however, we only get the fields, and no rows
       for (const row of batch) {
-        console.log(row);
         for (const [field, val] of row) {
           console.log(field, val);
         }

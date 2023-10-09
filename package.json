@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "apache-arrow": "^13.0.0",
-    "duckdb": "0.9.1-dev43.0"
+    "duckdb": "0.9.1-dev157.0"
   },
   "devDependencies": {
     "electron": "^26.2.4"
